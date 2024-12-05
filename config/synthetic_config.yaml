@@ -1,0 +1,76 @@
+run_name: synthetic_test_2
+dataset:
+  add_node_features: true
+  dataset_dir: data/
+  dataset_name: synthetic
+  dataset_save_path: data/synthetic
+  degree_feature_one_hot: true
+  is_already_split: true # true if files in data/synthetic
+  max_dataset_size: 0
+  max_nodes: 13 #updtes during train
+  node_feature_type: adj
+  num_node_features: 13 #updtes during train
+  prop_or_count: proportion
+  raw_dataset: raw_datasets/data.pkl
+  shuffle: true
+  test_num: 0
+  test_prop: 0.1
+device: cuda:0
+evaluation:
+  compute_mmd: true
+  do_plots: true
+  full_test_gen: true
+  kernel: gaussian_tv
+  num_gen: 0
+  sigma: 1.0
+  wiki_ego_run: false
+  wiki_ego_topic_map: null
+gvqvae:
+  checkpoint_dir:
+  gvqvae_dir:
+  model:
+    codebook_dim: 32
+    codebook_init_sd: 0.05
+    codebook_size: 128
+    codes_per_graph: 13
+    decoder_size_1: 2048
+    decoder_size_2: 4096
+    ema: false
+    encoder_channels_1: 128
+    encoder_channels_2: 64
+    encoder_dropout: 0.4
+    encoder_linear_layers: true
+    gnn_conv_aggr: mean
+    gnn_conv_type: sageconv
+    num_random_feature: 0
+    output_node_dim: 6
+    pre_vq_batchnorm: true
+    random_feature_only: false
+    random_feature_sd: 0.02
+    use_random_feature: true
+    use_vq_bottleneck: true
+  plots_dir: #updtes during train
+  test:
+    last_checkpoint:
+  train:
+    batch_size: 16
+    checkpoint_steps: 2500
+    codebook_check_samples: 1500
+    codebook_lr_factor: 10.0
+    codebook_refit_samples: 5000
+    codebook_refit_steps: []
+    commitment_cost: 0.25
+    do_embedding_plots: true
+    epochs: 300
+    learning_rate: 0.0005
+    lr_decay_factor: 0.5
+    lr_decay_patience: 3
+    max_test_samples: 300
+    min_lr: 1.0e-08
+    resume_step: 0
+    resume_training: false
+    test_every_steps: 250
+    weight_decay: 1.0e-04
+run_dir_root: runs/
+#updtes during train
+seed: 1462
